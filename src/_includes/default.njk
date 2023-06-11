@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta -->
+    <meta name="description" content="{{ description }}" />
+
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="{{ '/site.css' | url }}" />
+  </head>
+
+  <body class="font-sans leading-normal tracking-normal text-gray-900">
+    {{ content | safe }}
+  </body>
+</html>

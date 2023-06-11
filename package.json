@@ -1,0 +1,29 @@
+{
+  "name": "aithai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:postcss & npm run start:eleventy && fg",
+    "start:eleventy": "eleventy --serve",
+    "start:postcss": "postcss src/styles/*.css --dir _site --watch",
+    "build": "npm run build:eleventy && npm run build:postcss",
+    "build:eleventy": "ELEVENTY_PRODUCTION=true eleventy",
+    "build:postcss": "NODE_ENV=production postcss src/styles/*.css --dir _site",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Witchu Promjunyakul",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "html-minifier": "^4.0.0",
+    "js-yaml": "^4.1.0",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "tailwindcss": "^3.3.2"
+  }
+}
