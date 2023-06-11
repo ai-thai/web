@@ -16,7 +16,12 @@ description: Description
   <content>
     <ul class="max-w-md space-y-1 list-disc list-inside">
       {%- for link in links -%}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        <li>
+          <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+          {%- for tag in link.tags -%}
+            <span class="text-xs"> [<a href="{{ '/tag/' | htmlBaseUrl }}{{ tag | slugify }}">{{ tag }}</a>]</span>
+          {%- endfor -%}
+        </li>
       {%- endfor -%}
     </ul>
   </content>

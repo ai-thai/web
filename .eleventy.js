@@ -1,10 +1,15 @@
-const fs = require("fs");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const htmlmin = require("html-minifier");
 const yaml = require("js-yaml");
 
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+  eleventyConfig.addFilter("only", function (arr, selection, attr) {
+    return arr.filter((item) => item[attr].includes(selection));
+  });
 
   if (process.env.ELEVENTY_PRODUCTION) {
     eleventyConfig.addTransform("htmlmin", htmlminTransform);
