@@ -1,11 +1,9 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const htmlmin = require("html-minifier");
 const yaml = require("js-yaml");
 
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   eleventyConfig.addFilter("only", function (arr, selection, attr) {
     return arr.filter((item) => item[attr].includes(selection));
@@ -22,9 +20,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/styles/");
 
   var pathPrefix = "";
-  if (process.env.GITHUB_REPOSITORY) {
-    pathPrefix = process.env.GITHUB_REPOSITORY.split('/')[1];
-  }
+  // if (process.env.GITHUB_REPOSITORY) {
+  //   pathPrefix = process.env.GITHUB_REPOSITORY.split('/')[1];
+  // }
 
   return {
     dir: {

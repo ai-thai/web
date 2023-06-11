@@ -19,7 +19,7 @@ description: Description
         <li>
           <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
           {%- for tag in link.tags -%}
-            <span class="text-xs"> [<a href="{{ '/tag/' | htmlBaseUrl }}{{ tag | slugify }}">{{ tag }}</a>]</span>
+            <span class="text-xs"> [<a href="/tag/{{ tag | slugify }}">{{ tag }}</a>]</span>
           {%- endfor -%}
         </li>
       {%- endfor -%}
