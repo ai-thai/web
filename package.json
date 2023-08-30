@@ -21,7 +21,7 @@
     "cssnano": "^6.0.1",
     "html-minifier": "^4.0.0",
     "js-yaml": "^4.1.0",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.29",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "tailwindcss": "^3.3.2"
